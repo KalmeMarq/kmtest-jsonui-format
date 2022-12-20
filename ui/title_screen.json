@@ -68,9 +68,8 @@
       "orientation": "horizontal",
       "column_gap": 4,
       "size": ["100%c", "100%c"],
-      "offset": [0, "100% / 4 + 48px"],
-      "anchor_from": "center",
-      "anchor_to": "top_middle",
+      "offset": [0, "100% / 4 + 48px"], 
+      "anchor": "top_middle",
       "children": [
         {
           "name": "left",
@@ -189,7 +188,6 @@
           "name": "base_screen"
         }
       ],
-      "type": "screen",
       "children": [
         {
           "name": "panorama",

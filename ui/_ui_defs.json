@@ -5,6 +5,10 @@
       "path": "title_screen.json"
     },
     {
+      "namespace": "pause",
+      "path": "pause_screen.json"
+    },
+    {
       "namespace": "world_loading",
       "path": "world_loading_screen.json"
     },

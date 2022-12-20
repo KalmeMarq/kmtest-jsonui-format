@@ -1,0 +1,141 @@
+{
+  "elements": [
+    {
+      "name": "buttons_panel",
+      "type": "stack_panel",
+      "size": [204, "100%c"],
+      "row_gap": 4,
+      "children": [
+        {
+          "name": "return_game_button",
+          "expands": [ { "namespace": "common", "name": "classic_button" } ],
+          "width": 204,
+          "variables": {
+            "$button_label": "menu.returnToGame"
+          }
+        },
+        {
+          "name": "row_0",
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [204, 20],
+          "column_gap": 8,
+          "children": [
+            {
+              "name": "advancements_button",
+              "expands": [ { "namespace": "common", "name": "classic_button" } ],
+              "width": 98,
+              "variables": {
+                "$button_label": "menu.advancements"
+              }
+            },
+            {
+              "name": "stats_button",
+              "expands": [ { "namespace": "common", "name": "classic_button" } ],
+              "width": 98,
+              "variables": {
+                "$button_label": "menu.stats"
+              } 
+            }
+          ]
+        },
+        {
+          "name": "row_1",
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [204, 20],
+          "column_gap": 8,
+          "children": [
+            {
+              "name": "feedback_button",
+              "expands": [ { "namespace": "common", "name": "classic_button" } ],
+              "width": 98,
+              "variables": {
+                "$button_label": "menu.feedback"
+              }
+            },
+            {
+              "name": "report_bugs_button",
+              "expands": [ { "namespace": "common", "name": "classic_button" } ],
+              "width": 98,
+              "variables": {
+                "$button_label": "menu.reportBugs"
+              } 
+            }
+          ] 
+        },
+        {
+          "name": "row_2",
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [204, 20],
+          "column_gap": 8,
+          "children": [
+            {
+              "name": "options_button",
+              "expands": [ { "namespace": "common", "name": "classic_button" } ],
+              "width": 98,
+              "variables": {
+                "$button_label": "menu.options"
+              }
+            },
+            {
+              "name": "player_report_button",
+              "expands": [ { "namespace": "common", "name": "classic_button" } ],
+              "width": 98,
+              "variables": {
+                "$button_label": "menu.reportPlayer"
+              },
+              "data_bindings": [
+                {
+                  "binding_type": "global",
+                  "binding_name": "#show_player_report_button"
+                }
+              ]
+            },
+            {
+              "name": "open_lan_button",
+              "expands": [ { "namespace": "common", "name": "classic_button" } ],
+              "width": 98,
+              "variables": {
+                "$button_label": "menu.openToLan"
+              },
+              "data_bindings": [
+                {
+                  "binding_type": "view",
+                  "source_control_name": "player_report_button",
+                  "source_property_name": "(not #visible)",
+                  "target_property_name": "#visible"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "return_title_button",
+          "expands": [ { "namespace": "common", "name": "classic_button" } ],
+          "width": 204,
+          "variables": {
+            "$button_label": "menu.returnToTitle"
+          }
+        }
+      ]
+    },
+    {
+      "name": "pause_screen",
+      "expands": [ { "namespace": "common", "name": "base_screen" } ],
+      "children": [
+        {
+          "name": "title",
+          "text": "menu.game",
+          "anchor": "top_middle",
+          "offset": [0, 60]
+        },
+        {
+          "name": "buttons",
+          "expands": ["buttons_panel"]
+        }
+      ]
+    }
+  ]
+}

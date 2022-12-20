@@ -82,6 +82,10 @@
       "type": "custom",
       "renderer": "panorama_renderer",
       "use_global_time": true
+    },
+    {
+      "name": "base_screen",
+      "type": "screen"
     }
   ]
 }
