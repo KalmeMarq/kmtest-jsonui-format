@@ -89,7 +89,8 @@
               "data_bindings": [
                 {
                   "binding_type": "global",
-                  "binding_name": "#show_player_report_button"
+                  "binding_name": "#show_player_report_button",
+                  "binding_name_override": "#visible"
                 }
               ]
             },
