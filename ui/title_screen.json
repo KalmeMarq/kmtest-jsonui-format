@@ -1,0 +1,217 @@
+{
+  "variables": {
+    "$play_button_text": "Play MC"
+  },
+  "elements": [
+    {
+      "name": "minecraft_info",
+      "type": "stack_panel",
+      "orientation": "horizontal",
+      "anchor": "bottom_left",
+      "offset": [2, -1],
+      "size": ["100%c", 9],
+      "children": [
+        {
+          "name": "minecraft",
+          "type": "label",
+          "text": "Minecraft "
+        },
+        {
+          "name": "version",
+          "type": "label",
+          "text": "#version",
+          "data_bindings": [
+            {
+              "binding_type": "global",
+              "binding_name": "#version"
+            }
+          ]
+        },
+        {
+          "name": "demo",
+          "type": "label",
+          "text": " Demo",
+          "visible": "$is_demo"
+        },
+        {
+          "name": "version_type",
+          "type": "label",
+          "text": "/ + #version_type",
+          "visible": "(!$is_demo && !$is_release)",
+          "data_bindings": [
+            {
+              "binding_type": "global",
+              "binding_name": "#version_type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "copyright",
+      "type": "pressable_label",
+      "text": "#text",
+      "hover_text": "(§n + #text)",
+      "anchor": "bottom_right",
+      "offset": [-1, -1],
+      "data_bindings": [
+        {
+          "binding_type": "global",
+          "binding_name": "#minecraft_version",
+          "binding_name_override": "#text"
+        }
+      ]
+    },
+    {
+      "name": "buttons_panel",
+      "type": "stack_panel",
+      "orientation": "horizontal",
+      "column_gap": 4,
+      "size": ["100%c", "100%c"],
+      "offset": [0, "100% / 4 + 48px"],
+      "anchor_from": "center",
+      "anchor_to": "top_middle",
+      "children": [
+        {
+          "name": "left",
+          "type": "stack_panel",
+          "size": [20, "100%sm"],
+          "children": [
+            {
+              "name": "filler",
+              "expands": [ { "namespace": "common", "name": "vfill" } ]
+            },
+            {
+              "name": "language_button",
+              "expands": [ { "namespace": "common", "name": "classic_button" } ],
+              "width": 20,
+              "variables": {
+                "$button_label": "L"
+              }
+            }
+          ]
+        },
+        {
+          "name": "main",
+          "type": "stack_panel",
+          "row_gap": 4,
+          "size": [200, "100%c"],
+          "children": [
+            {
+              "name": "singleplayer_button",
+              "expands": [ { "namespace": "common", "name": "classic_button" } ],
+              "variables": {
+                "$button_label": "menu.singleplayer"
+              }
+            },
+            {
+              "name": "multiplayer_button",
+              "expands": [ { "namespace": "common", "name": "classic_button" } ],
+              "variables": {
+                "$button_label": "menu.multiplayer"
+              }
+            },
+            {
+              "name": "realms_button",
+              "expands": [ { "namespace": "common", "name": "classic_button" } ],
+              "variables": {
+                "$button_label": "menu.realms"
+              }
+            },
+            {
+              "name": "spacer",
+              "type": "panel",
+              "size": [0, 12]
+            },
+            {
+              "name": "row",
+              "type": "stack_panel",
+              "orientation": "horizontal",
+              "column_gap": 4,
+              "size": ["100%", 20],
+              "children": [
+                {
+                  "name": "options_button",
+                  "expands": [ { "namespace": "common", "name": "classic_button" } ],
+                  "width": 98,
+                  "variables": {
+                    "$button_label": "menu.options"
+                  }
+                },
+                {
+                  "name": "quit_button",
+                  "expands": [ { "namespace": "common", "name": "classic_button" } ],
+                  "width": 98,
+                  "variables": {
+                    "$button_label": "menu.quit"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "right",
+          "type": "stack_panel",
+          "size": [20, "100%sm"],
+          "children": [
+            {
+              "name": "filler",
+              "expands": [ { "namespace": "common", "name": "vfill" } ]
+            },
+            {
+              "name": "accessibility_button",
+              "expands": ["classic_button"],
+              "width": 20,
+              "variables": {
+                "$button_label": "A"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "splash_text",
+      "type": "custom",
+      "renderer": "splash_text_renderer",
+      "rotation": -20,
+      "speed": 1,
+      "size": [0, 0],
+      "anchor": "top_left",
+      "offset": ["100% / 2 + 90px", 70]
+    },
+    {
+      "name": "title_screen",
+      "expands": [
+        {
+          "namespace": "common",
+          "name": "base_screen"
+        }
+      ],
+      "type": "screen",
+      "children": [
+        {
+          "name": "panorama",
+          "expands": [ { "namespace": "common", "name": "background_panorama" } ]
+        },
+        {
+          "name": "splashes",
+          "expands": ["splash_text"]
+        },
+        {
+          "name": "mc_info",
+          "expands": ["minecraft_info"]
+        },
+        {
+          "name": "copyright",
+          "expands": ["copyright"]
+        },
+        {
+          "name": "buttons",
+          "expands": ["buttons_panel"]
+        }
+      ]
+    }
+  ]
+}

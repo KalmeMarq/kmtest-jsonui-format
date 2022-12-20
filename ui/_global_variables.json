@@ -1,0 +1,5 @@
+{
+  "variables": {
+    "$test_global_variable": 0.2
+  }
+}

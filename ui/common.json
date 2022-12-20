@@ -1,0 +1,87 @@
+{
+  "elements": [
+    {
+      "name": "hfill",
+      "type": "panel",
+      "size": ["fill", 0]
+    },
+    {
+      "name": "vfill",
+      "type": "panel",
+      "size": [0, "fill"]
+    },
+    {
+      "name": "classic_button_bg",
+      "type": "stack_panel",
+      "orientation": "horizontal",
+      "size": ["100%", 20],
+      "children": [
+        {
+          "name": "left",
+          "type": "image",
+          "texture": "minecraft:textures/gui/widgets.png",
+          "uv": "$classic_button_bg_uv",
+          "uv_size": ["50%", 20],
+          "size": ["50%", 20]
+        },
+        {
+          "name": "right",
+          "type": "image",
+          "texture": "minecraft:textures/gui/widgets.png",
+          "uv": "$classic_button_bg_uv",
+          "uv_size": ["50%", 20],
+          "size": ["50%", 20]
+        }
+      ]
+    },
+    {
+      "name": "classic_button_state_panel",
+      "type": "panel",
+      "children": [
+        {
+          "name": "bg",
+          "expands": ["classic_button_bg"]
+        },
+        {
+          "name": "button_label",
+          "type": "label",
+          "text": "$button_label"
+        }
+      ]
+    },
+    {
+      "name": "classic_button",
+      "type": "button",
+      "size": [200, 20],
+      "children": [
+        {
+          "name": "default",
+          "expands": ["classic_button_state_panel"],
+          "variables": {
+            "$classic_button_bg_uv": [0, 66]
+          }
+        },
+        {
+          "name": "hover",
+          "expands": ["classic_button_state_panel"],
+          "variables": {
+            "$classic_button_bg_uv": [0, 86]
+          }
+        },
+        {
+          "name": "locked",
+          "expands": ["classic_button_state_panel"],
+          "variables": {
+            "$classic_button_bg_uv": [0, 46]
+          }
+        }
+      ]
+    },
+    {
+      "name": "background_panorama",
+      "type": "custom",
+      "renderer": "panorama_renderer",
+      "use_global_time": true
+    }
+  ]
+}
